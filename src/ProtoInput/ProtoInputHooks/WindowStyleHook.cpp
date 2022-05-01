@@ -5,12 +5,12 @@ namespace Proto
 
 inline void FilterStyle(LONG& style)
 {
-	style &= ~(WS_BORDER | WS_SYSMENU | WS_DLGFRAME);
+	style &= ~(WS_BORDER | WS_SYSMENU | WS_DLGFRAME | WS_CAPTION | WS_THICKFRAME | WS_MINIMIZE | WS_MAXIMIZE);
 }
 
 inline void FilterStylePtr(LONG_PTR& style)
 {
-	style &= ~(WS_BORDER | WS_SYSMENU | WS_DLGFRAME);
+	style &= ~(WS_BORDER | WS_SYSMENU | WS_DLGFRAME | WS_CAPTION | WS_THICKFRAME | WS_MINIMIZE | WS_MAXIMIZE);
 }
 
 LONG WINAPI Hook_SetWindowLongA(

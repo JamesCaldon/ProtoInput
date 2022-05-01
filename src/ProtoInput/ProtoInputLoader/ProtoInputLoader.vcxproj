@@ -52,6 +52,12 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -101,7 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInputHooks\pipeinclude;$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)ProtoInputLoader\include;%(AdditionalIncludeDirectories);$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputHooks\pipeinclude;$(ProjectDir)..\..\..\lib\BlackBone\src;$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputLoader\include;%(AdditionalIncludeDirectories);$(ProjectDir)..\..\..\lib\EasyHook\Public</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -110,7 +116,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\EasyHook\Build\x64\netfx4-Release;$(SolutionDir)build\x64\Release;$(SolutionDir)x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib\EasyHook\Build\x64\netfx4-Release;$(SolutionDir)build\x64\Release;$(SolutionDir)x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BlackBone.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -124,14 +130,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInputHooks\pipeinclude;$(SolutionDir)..\..\lib\BlackBone\src;%(AdditionalIncludeDirectories);$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputHooks\pipeinclude;$(SolutionDir)ProtoInput\lib\BlackBone\src;%(AdditionalIncludeDirectories);$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\EasyHook\Build\x86\netfx4-Debug;$(SolutionDir)build\Win32\Debug;$(SolutionDir)x86\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Debug;$(SolutionDir)build\Win32\Debug;$(SolutionDir)x86\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BlackBone.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -145,14 +151,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInputHooks\pipeinclude;$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)ProtoInputLoader\include;%(AdditionalIncludeDirectories);$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputHooks\pipeinclude;$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;%(AdditionalIncludeDirectories);$(SolutionDir)ProtoInput\lib\EasyHook\Public</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\EasyHook\Build\x64\netfx4-Debug;$(SolutionDir)build\x64\Debug;$(SolutionDir)x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ProtoInput\lib\EasyHook\Build\x64\netfx4-Debug;$(SolutionDir)build\x64\Debug;$(SolutionDir)x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BlackBone.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -168,7 +174,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInputHooks\pipeinclude;$(SolutionDir)..\..\lib\BlackBone\src;%(AdditionalIncludeDirectories);$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputHooks\pipeinclude;$(SolutionDir)ProtoInput\lib\BlackBone\src;%(AdditionalIncludeDirectories);$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -177,7 +183,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)build\Win32\Release;$(SolutionDir)x86\Release;$(SolutionDir)..\..\lib\EasyHook\Build\x86\netfx4-Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)build\Win32\Release;$(SolutionDir)x86\Release;$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BlackBone.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>

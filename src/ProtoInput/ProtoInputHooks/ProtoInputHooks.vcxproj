@@ -52,6 +52,12 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -103,7 +109,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include;$(SolutionDir)ProtoInputUtil\include;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
@@ -112,7 +118,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\Win32\Debug;$(SolutionDir)..\..\lib\EasyHook\Build\x86\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\Win32\Debug;$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
@@ -125,7 +131,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include;$(SolutionDir)ProtoInputUtil\include;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
@@ -133,7 +139,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;$(SolutionDir)..\..\lib\EasyHook\Build\x64\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;$(SolutionDir)ProtoInput\lib\EasyHook\Build\x64\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -149,7 +155,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include;$(SolutionDir)ProtoInputUtil\include;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -159,7 +165,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)..\..\lib\EasyHook\Build\x86\netfx4-Release;$(SolutionDir)build\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Release;$(SolutionDir)build\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
@@ -174,7 +180,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)ProtoInputLoader\include;$(SolutionDir)ProtoInputUtil\include;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\lib\BlackBone\src;$(ProjectDir)..\..\..\lib\imgui;$(ProjectDir)..\..\..\lib\glew\include;$(ProjectDir)..\..\..\lib\EasyHook\Public;$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputLoader\include;$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputUtil\include;$(ProjectDir)..\..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -184,7 +190,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)..\..\lib\EasyHook\Build\x64\netfx4-Release;$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(ProjectDir)..\..\..\lib\EasyHook\Build\x64\netfx4-Release;$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
