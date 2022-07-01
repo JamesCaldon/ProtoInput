@@ -15,7 +15,7 @@
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
-		<Platform>x64</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
@@ -29,12 +29,13 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DEVOBJ\DEVOBJ.vcxproj">
-      <Project>{8007e347-8033-4031-afd4-06579d463942}</Project>
-    </ProjectReference>
+    <Text Include="updating.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="updating.txt" />
+    <ProjectReference Include="DEVOBJ\DEVOBJ.vcxproj">
+      <Project>{8007e347-8033-4031-afd4-06579d463942}</Project>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -99,26 +100,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,6 +134,8 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,9 +148,15 @@
       <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
     </Link>
     <Lib>
-      <AdditionalDependencies>DEVOBJ.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)tmp\$(Configuration)$(PlatformArchitecture)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>
+      </LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -161,6 +170,8 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,9 +182,15 @@
       <IgnoreSpecificDefaultLibraries>KERNEL32</IgnoreSpecificDefaultLibraries>
     </Link>
     <Lib>
-      <AdditionalDependencies>DEVOBJ.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)tmp\$(Configuration)$(PlatformArchitecture)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>
+      </LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -189,6 +206,8 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -201,9 +220,15 @@
       <IgnoreSpecificDefaultLibraries>KERNEL32</IgnoreSpecificDefaultLibraries>
     </Link>
     <Lib>
-      <AdditionalDependencies>DEVOBJ.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)tmp\$(Configuration)$(PlatformArchitecture)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>
+      </LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -219,6 +244,8 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -231,9 +258,15 @@
       <IgnoreSpecificDefaultLibraries>KERNEL32</IgnoreSpecificDefaultLibraries>
     </Link>
     <Lib>
-      <AdditionalDependencies>DEVOBJ.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)tmp\$(Configuration)$(PlatformArchitecture)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>
+      </LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

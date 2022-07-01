@@ -78,26 +78,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -109,7 +109,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;$(ProjectDir)..\ProtoInputLoader\include;$(ProjectDir)..\ProtoInputUtil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
@@ -117,10 +117,15 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\Win32\Debug;$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Dinput8.lib;dxguid.lib;Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>
+      </UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -131,7 +136,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;$(ProjectDir)..\ProtoInputLoader\include;$(ProjectDir)..\ProtoInputUtil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
@@ -139,10 +144,15 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;$(SolutionDir)ProtoInput\lib\EasyHook\Build\x64\netfx4-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Dinput8.lib;dxguid.lib;Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>
+      </UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -155,7 +165,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)ProtoInput\lib\BlackBone\src;$(SolutionDir)ProtoInput\lib\imgui;$(SolutionDir)ProtoInput\lib\glew\include;$(SolutionDir)ProtoInput\lib\EasyHook\Public;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputLoader\include;$(SolutionDir)ProtoInput\src\ProtoInput\ProtoInputUtil\include;$(SolutionDir)ProtoInput\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;$(ProjectDir)..\ProtoInputLoader\include;$(ProjectDir)..\ProtoInputUtil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -164,10 +174,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)ProtoInput\lib\EasyHook\Build\x86\netfx4-Release;$(SolutionDir)build\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Dinput8.lib;dxguid.lib;Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>
+      </UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -180,7 +195,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\lib\BlackBone\src;$(ProjectDir)..\..\..\lib\imgui;$(ProjectDir)..\..\..\lib\glew\include;$(ProjectDir)..\..\..\lib\EasyHook\Public;$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputLoader\include;$(ProjectDir)..\..\..\src\ProtoInput\ProtoInputUtil\include;$(ProjectDir)..\..\..\lib\openxinput-OpenXinput1_4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\lib\BlackBone\src;$(SolutionDir)..\..\lib\imgui;$(SolutionDir)..\..\lib\glew\include;$(SolutionDir)..\..\lib\EasyHook\Public;$(SolutionDir)..\..\lib\openxinput-OpenXinput1_4;$(ProjectDir)..\ProtoInputLoader\include;$(ProjectDir)..\ProtoInputUtil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -189,10 +204,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>BlackBone.lib;opengl32.lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;Dinput8.lib;dxguid.lib;OpenXinput$(PlatformArchitecture).lib;Setupapi.lib;EasyHook64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(ProjectDir)..\..\..\lib\EasyHook\Build\x64\netfx4-Release;$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Dinput8.lib;dxguid.lib;Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>
+      </UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BlockRawInputHook.h" />
@@ -288,6 +308,22 @@
     <ClCompile Include="StateInfo.cpp" />
     <ClCompile Include="WindowStyleHook.cpp" />
     <ClCompile Include="XinputHook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\lib\Blackbone\src\BlackBone\BlackBone.vcxproj">
+      <Project>{a2c53563-46f5-4d87-903f-3f1f2fdb2deb}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\lib\EasyHook\EasyHookDll\EasyHookDll.vcxproj">
+      <Project>{d087e484-dbc9-4a2e-8368-c1d0e524994d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\lib\openxinput-OpenXinput1_4\OpenXinput.vcxproj">
+      <Project>{7d4180c0-fa00-4ed3-9d09-458942fc45ff}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtoInputUtil\ProtoInputUtil.vcxproj">
+      <Project>{1b052c6a-f9e6-4b73-be05-b33bb100b975}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

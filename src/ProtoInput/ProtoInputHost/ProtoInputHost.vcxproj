@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\x64\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\x64\</OutDir>
-    <IntDir>$(PlatformShortName)\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <IntDir>obj\$(PlatformShortName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,8 +105,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>BlackBone.lib;ProtoInputLoader$(PlatformArchitecture).lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;opengl32.lib;Comdlg32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\Win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,7 +125,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>BlackBone.lib;ProtoInputLoader$(PlatformArchitecture).lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;opengl32.lib;Comdlg32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -147,8 +148,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>BlackBone.lib;ProtoInputLoader$(PlatformArchitecture).lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;opengl32.lib;Comdlg32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -170,7 +172,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>BlackBone.lib;ProtoInputLoader$(PlatformArchitecture).lib;ProtoInputUtilStatic$(PlatformArchitecture).lib;opengl32.lib;Comdlg32.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -199,6 +201,17 @@
     <ClInclude Include="MessageList.h" />
     <ClInclude Include="Profiles.h" />
     <ClInclude Include="RawInput.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\lib\Blackbone\src\BlackBone\BlackBone.vcxproj">
+      <Project>{a2c53563-46f5-4d87-903f-3f1f2fdb2deb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtoInputLoader\ProtoInputLoader.vcxproj">
+      <Project>{564c672a-aeb8-4c04-a349-b125a3a552db}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtoInputUtil\ProtoInputUtil.vcxproj">
+      <Project>{1b052c6a-f9e6-4b73-be05-b33bb100b975}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
