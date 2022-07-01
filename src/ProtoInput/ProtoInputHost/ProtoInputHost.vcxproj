@@ -109,6 +109,9 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll *.exp *.lib *.pdb /XO &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -128,6 +131,9 @@
       <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll *.exp *.lib *.pdb /XO &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -152,6 +158,9 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll /XO &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -175,6 +184,9 @@
       <AdditionalDependencies>opengl32.lib;Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll /XO &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lib\glew\src\glew.c" />
@@ -208,9 +220,11 @@
     </ProjectReference>
     <ProjectReference Include="..\ProtoInputLoader\ProtoInputLoader.vcxproj">
       <Project>{564c672a-aeb8-4c04-a349-b125a3a552db}</Project>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
     </ProjectReference>
     <ProjectReference Include="..\ProtoInputUtil\ProtoInputUtil.vcxproj">
       <Project>{1b052c6a-f9e6-4b73-be05-b33bb100b975}</Project>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
