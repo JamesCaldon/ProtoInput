@@ -114,7 +114,7 @@
       </AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll *.exp *.lib *.pdb /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.exe *.dll *.exp *.lib *.pdb /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -136,7 +136,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll *.exp *.lib *.pdb /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.exe *.dll *.exp *.lib *.pdb /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -163,7 +163,7 @@
       </AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.exe *.dll /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -189,7 +189,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)build\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.dll /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
+      <Command>for /d %%a in (..\*) do robocopy %%a\bin\$(Configuration) bin\$(Configuration) /IF *.exe *.dll /XO /XX &gt; nul &amp; if %ERRORLEVEL% LEQ 3 cmd /c exit 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
